@@ -21,20 +21,40 @@ export const List: FC<Props> = props => {
                     languages: [
                         {
                             id: 1,
-                            name: 'ua'
+                            name: 'Ukrainian'
                         }
                     ]
                 },
                 {
                     id: 2,
-                    name: 'Russia',
+                    name: 'France',
                     languages: [
                         {
                             id: 2,
-                            name: 'ru'
+                            name: 'French'
                         }
                     ]
-                }
+                },
+                {
+                    id: 3,
+                    name: 'Germany',
+                    languages: [
+                        {
+                            id: 3,
+                            name: 'German'
+                        }
+                    ]
+                },
+                {
+                    id: 4,
+                    name: 'Italy',
+                    languages: [
+                        {
+                            id: 4,
+                            name: 'Italian'
+                        }
+                    ]
+                },
             ]
         },
         {
@@ -42,12 +62,12 @@ export const List: FC<Props> = props => {
             name: 'Asia',
             countries: [
                 {
-                    id: 3,
+                    id: 5,
                     name: 'China',
                     languages: [
                         {
-                            id: 3,
-                            name: 'ch'
+                            id: 5,
+                            name: 'Chinese'
                         }
                     ]
                 }

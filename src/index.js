@@ -3,18 +3,9 @@ import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import {List} from "./components/List/List";
 
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
-
-const client = new ApolloClient({
-    uri: 'https://countries.trevorblades.com/',
-    cache: new InMemoryCache(),
-});
-
 ReactDOM.render(
     <React.StrictMode>
-        <ApolloProvider client={client}>
-            <List/>
-        </ApolloProvider>
+        <List/>
     </React.StrictMode>,
     document.getElementById('root')
 );
