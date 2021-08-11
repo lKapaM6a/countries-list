@@ -1,6 +1,5 @@
 import React, {FC, useState} from 'react'
 import styles from './List.module.scss'
-import ListElement from "./ListElement";
 
 interface Props {
     localization?: ListLocalization
@@ -8,114 +7,53 @@ interface Props {
 
 export const List: FC<Props> = props => {
 
-    const [listData, setListData] = useState([
+    const [activeContinent, setActiveContinent] = useState()
+    const [activeCountry, setActiveCountry] = useState()
+
+    const continents = [
         {
-            // Continents: [
-            //     {
-            //         name: 'Europe',
-            //         Countries: [
-            //             {
-            //                 name: 'Ukraine',
-            //                 Language: [
-            //                     {
-            //                         name: 'Ukrainian'
-            //                     }
-            //                 ],
-            //             },
-            //             {
-            //                 name: 'Turkey',
-            //                 Language: [
-            //                     {
-            //                         name: 'Turkish'
-            //                     }
-            //                 ]
-            //             }
-            //         ],
-            //     },
-            //     {
-            //         name: 'America',
-            //     }
-            // ],
-            Continent: 'Europe',
-            Country: 'Andorra',
-            Language: 'Catalan',
+            id: 1,
+            name: 'Europe',
+            countries: [
+                {
+                    id: 1,
+                    name: 'Ukraine',
+                    languages: [
+                        {
+                            id: 1,
+                            name: 'ua'
+                        }
+                    ]
+                },
+                {
+                    id: 2,
+                    name: 'Russia',
+                    languages: [
+                        {
+                            id: 2,
+                            name: 'ru'
+                        }
+                    ]
+                }
+            ]
         },
         {
-            Continent: 'Test',
-            Country: 'Test',
-            Language: 'Test',
+            id: 2,
+            name: 'Asia',
+            countries: [
+                {
+                    id: 3,
+                    name: 'China',
+                    languages: [
+                        {
+                            id: 3,
+                            name: 'ch'
+                        }
+                    ]
+                }
+            ]
         },
-        {
-            Continent: 'Test',
-            Country: 'Test',
-            Language: 'Test',
-        },
-        {
-            Continent: 'Test',
-            Country: 'Test',
-            Language: 'Test',
-        },
-        {
-            Continent: 'Test',
-            Country: 'Test',
-            Language: 'Test',
-        },
-        {
-            Continent: 'Test',
-            Country: 'Test',
-            Language: 'Test',
-        },
-        {
-            Continent: 'Test',
-            Country: 'Test',
-            Language: 'Test',
-        },
-        {
-            Continent: 'Test',
-            Country: 'Test',
-            Language: 'Test',
-        },
-        {
-            Continent: 'Test',
-            Country: 'Test',
-            Language: 'Test',
-        },
-        {
-            Continent: 'Test',
-            Country: 'Test',
-            Language: 'Test',
-        },
-        {
-            Continent: 'Test',
-            Country: 'Test',
-            Language: 'Test',
-        },
-        {
-            Continent: 'Test',
-            Country: 'Test',
-            Language: 'Test',
-        },
-        {
-            Continent: 'Test',
-            Country: 'Test',
-            Language: 'Test',
-        },
-        {
-            Continent: 'Test',
-            Country: 'Test',
-            Language: 'Test',
-        },
-        {
-            Continent: 'Test',
-            Country: 'Test',
-            Language: 'Test',
-        },
-        {
-            Continent: 'Test',
-            Country: 'Test',
-            Language: 'Test',
-        }
-    ]);
+    ]
 
     return (
         <>
@@ -123,40 +61,45 @@ export const List: FC<Props> = props => {
                 <h1 className={styles.title}>{localization.title}</h1>
 
                 <div className={styles.listWrapper}>
-                    {listData.map((value, index) => {
-                        return (
-                            <div className={styles.listItem} key={index}>
-                                <ListElement
-                                    value={value}
-                                    key={index}
-                                    index={index + 1}
-                                />
+
+                    {continents.map(continent => (
+                        <>
+                            <div className={styles.listItem} key={continent.id}>
+                                <div className={`${styles.listName} ${styles.toggle}`}
+                                     onClick={() => setActiveContinent(continent.id)}>
+                                    {continent.name}
+                                </div>
+
+                                {continent.countries.map(country => (
+                                    <div className={styles.listItem}
+                                         key={country.id}>
+                                        <div className={`${styles.listName} ${styles.toggle}`}
+                                             onClick={() => setActiveCountry(country.id)}>
+                                            {country.name}
+                                        </div>
+
+                                        {country.languages.map(lang => (
+                                            <div className={styles.listItem} key={lang.id}>
+                                                <div className={styles.listName}>
+                                                    {lang.name}
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                ))}
                             </div>
-                        );
-                    })}
+                        </>
+                    ))}
                 </div>
-
-                {listData.length > 10 && (
-                    <>
-                        <div className={styles.showMoreWrapper}>
-                            <div className={styles.showMore}>
-                                {localization.showMore}
-                            </div>
-                        </div>
-                    </>
-                )}
-
             </div>
         </>
     )
 }
 
 const localization = {
-    title: 'Countries list',
-    showMore: 'Show more'
+    title: 'Countries list'
 }
 
 export interface ListLocalization {
-    title: string,
-    showMore: string
+    title: string
 }
