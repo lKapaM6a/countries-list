@@ -10,36 +10,111 @@ export const List: FC<Props> = props => {
 
     const [listData, setListData] = useState([
         {
-            Continents: [
-                {
-                    name: 'Europe',
-                    Countries: [
-                        {
-                            name: 'Ukraine',
-                            Language: [
-                                {
-                                    name: 'Ukrainian'
-                                }
-                            ],
-                        },
-                        {
-                            name: 'Turkey',
-                            Language: [
-                                {
-                                    name: 'Turkish'
-                                }
-                            ]
-                        }
-                    ],
-                },
-                {
-                    name: 'America',
-                }
-            ],
+            // Continents: [
+            //     {
+            //         name: 'Europe',
+            //         Countries: [
+            //             {
+            //                 name: 'Ukraine',
+            //                 Language: [
+            //                     {
+            //                         name: 'Ukrainian'
+            //                     }
+            //                 ],
+            //             },
+            //             {
+            //                 name: 'Turkey',
+            //                 Language: [
+            //                     {
+            //                         name: 'Turkish'
+            //                     }
+            //                 ]
+            //             }
+            //         ],
+            //     },
+            //     {
+            //         name: 'America',
+            //     }
+            // ],
             Continent: 'Europe',
             Country: 'Andorra',
             Language: 'Catalan',
         },
+        {
+            Continent: 'Test',
+            Country: 'Test',
+            Language: 'Test',
+        },
+        {
+            Continent: 'Test',
+            Country: 'Test',
+            Language: 'Test',
+        },
+        {
+            Continent: 'Test',
+            Country: 'Test',
+            Language: 'Test',
+        },
+        {
+            Continent: 'Test',
+            Country: 'Test',
+            Language: 'Test',
+        },
+        {
+            Continent: 'Test',
+            Country: 'Test',
+            Language: 'Test',
+        },
+        {
+            Continent: 'Test',
+            Country: 'Test',
+            Language: 'Test',
+        },
+        {
+            Continent: 'Test',
+            Country: 'Test',
+            Language: 'Test',
+        },
+        {
+            Continent: 'Test',
+            Country: 'Test',
+            Language: 'Test',
+        },
+        {
+            Continent: 'Test',
+            Country: 'Test',
+            Language: 'Test',
+        },
+        {
+            Continent: 'Test',
+            Country: 'Test',
+            Language: 'Test',
+        },
+        {
+            Continent: 'Test',
+            Country: 'Test',
+            Language: 'Test',
+        },
+        {
+            Continent: 'Test',
+            Country: 'Test',
+            Language: 'Test',
+        },
+        {
+            Continent: 'Test',
+            Country: 'Test',
+            Language: 'Test',
+        },
+        {
+            Continent: 'Test',
+            Country: 'Test',
+            Language: 'Test',
+        },
+        {
+            Continent: 'Test',
+            Country: 'Test',
+            Language: 'Test',
+        }
     ]);
 
     return (
@@ -60,6 +135,17 @@ export const List: FC<Props> = props => {
                         );
                     })}
                 </div>
+
+                {listData.length > 10 && (
+                    <>
+                        <div className={styles.showMoreWrapper}>
+                            <div className={styles.showMore}>
+                                {localization.showMore}
+                            </div>
+                        </div>
+                    </>
+                )}
+
             </div>
         </>
     )
@@ -67,8 +153,10 @@ export const List: FC<Props> = props => {
 
 const localization = {
     title: 'Countries list',
+    showMore: 'Show more'
 }
 
 export interface ListLocalization {
     title: string,
+    showMore: string
 }
