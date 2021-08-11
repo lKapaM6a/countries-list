@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/lKapaM6a/countries-list/static/css/main.56248b81.chunk.css",
+    "main.js": "/lKapaM6a/countries-list/static/js/main.d071f966.chunk.js",
+    "main.js.map": "/lKapaM6a/countries-list/static/js/main.d071f966.chunk.js.map",
+    "runtime-main.js": "/lKapaM6a/countries-list/static/js/runtime-main.3aae0bdb.js",
+    "runtime-main.js.map": "/lKapaM6a/countries-list/static/js/runtime-main.3aae0bdb.js.map",
+    "static/js/2.8d12c6b7.chunk.js": "/lKapaM6a/countries-list/static/js/2.8d12c6b7.chunk.js",
+    "static/js/2.8d12c6b7.chunk.js.map": "/lKapaM6a/countries-list/static/js/2.8d12c6b7.chunk.js.map",
+    "static/js/3.dbd12d9a.chunk.js": "/lKapaM6a/countries-list/static/js/3.dbd12d9a.chunk.js",
+    "static/js/3.dbd12d9a.chunk.js.map": "/lKapaM6a/countries-list/static/js/3.dbd12d9a.chunk.js.map",
+    "index.html": "/lKapaM6a/countries-list/index.html",
+    "static/css/main.56248b81.chunk.css.map": "/lKapaM6a/countries-list/static/css/main.56248b81.chunk.css.map",
+    "static/js/2.8d12c6b7.chunk.js.LICENSE.txt": "/lKapaM6a/countries-list/static/js/2.8d12c6b7.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3aae0bdb.js",
+    "static/js/2.8d12c6b7.chunk.js",
+    "static/css/main.56248b81.chunk.css",
+    "static/js/main.d071f966.chunk.js"
+  ]
+}
