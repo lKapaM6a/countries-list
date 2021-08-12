@@ -118,7 +118,7 @@ export const DelayedList: FC<Props> = props => {
 }
 
 const localization = {
-    title: 'Continent/Countries/Language list'
+    title: 'Continent / Countries / Language list'
 }
 
 export interface ListLocalization {

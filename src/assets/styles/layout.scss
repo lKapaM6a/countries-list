@@ -8,10 +8,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $primary;
-  font-size: 1.175rem;
+  font-size: 1rem;
   line-height: 1.2;
   font-weight: 600;
   background-color: $lightBg;
+
+  @include media("min", "md") {
+    font-size: 1.175rem;
+  }
+
 }
 
 ::-webkit-scrollbar-track {
