@@ -34,9 +34,9 @@ export const DelayedList: FC<Props> = props => {
             if (prev === code) {
                 return null
             }
-
             return code
         })
+
         // remove opened Country if closed Continent
         setActiveCountry(prev => {
             return null
@@ -76,10 +76,8 @@ export const DelayedList: FC<Props> = props => {
                             <h1 className={styles.title}>{localization.title}</h1>
 
                             <div className={styles.listWrapper}>
-
                                 {data?.continents?.map(continent => (
                                     <div className={styles.listItem} key={continent.code}>
-
                                         <span
                                             onClick={() => toggleContinent(continent.code)}
                                             className={`${styles.listName} 
@@ -91,7 +89,6 @@ export const DelayedList: FC<Props> = props => {
 
                                         {continent.code === activeContinent && continent.countries.map(country => (
                                             <div key={country.code} className={styles.listItem}>
-
                                                 <span
                                                     onClick={() => toggleCountry(country.code)}
                                                     className={`${styles.listName}
@@ -115,9 +112,7 @@ export const DelayedList: FC<Props> = props => {
                             </div>
                         </div>
                     </>
-
                 )}
-
         </>
     );
 }
