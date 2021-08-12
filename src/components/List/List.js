@@ -34,9 +34,13 @@ export const DelayedList: FC<Props> = props => {
             if (prev === code) {
                 return null
             }
+
             return code
         })
-
+        // remove opened Country if closed Continent
+        setActiveCountry(prev => {
+            return null
+        })
     }, []);
 
     const toggleCountry = useCallback(code => {
