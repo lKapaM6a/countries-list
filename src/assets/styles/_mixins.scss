@@ -6,6 +6,7 @@ $sizes: (
         "lg":992px,
         "xl":1200px
 );
+
 @mixin media($minmax, $media) {
   @each $size, $resolution in $sizes {
     @if $media == $size {
