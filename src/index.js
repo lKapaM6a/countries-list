@@ -1,16 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import reportWebVitals from './reportWebVitals';
-import {List} from "./components/List/List";
+import React from "react";
+import ReactDOM from "react-dom";
+
+import App from "./App";
+import { ApolloClient, ApolloProvider } from "@apollo/client";
+import { cache } from "./cache";
+import { typeDefs } from "./typeDefs";
+
+const client = new ApolloClient({
+    cache,
+    uri: "https://countries.trevorblades.com",
+    typeDefs,
+    resolvers: {}
+});
 
 ReactDOM.render(
-    <React.StrictMode>
-        <List/>
-    </React.StrictMode>,
-    document.getElementById('root')
+    <ApolloProvider client={client}>
+        <App />
+    </ApolloProvider>,
+    document.getElementById("root")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
