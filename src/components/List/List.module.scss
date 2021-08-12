@@ -43,6 +43,10 @@
     margin-bottom: 1rem;
   }
 
+  &:not(.toggle) {
+    pointer-events: none;
+  }
+
   &.toggle {
     position: relative;
     padding-right: 1.25rem;
@@ -78,6 +82,8 @@
     }
 
     &.opened {
+      color: $accent;
+
       &::after {
         opacity: 0;
         transform: translateY(-50%) rotate(180deg);
