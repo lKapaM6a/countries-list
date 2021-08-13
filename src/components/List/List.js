@@ -81,7 +81,7 @@ export const DelayedList: FC<Props> = props => {
                                         <span
                                             onClick={() => toggleContinent(continent.code)}
                                             className={`${styles.listName} 
-                                            ${continent.code.length > 0 ? `${styles.toggle}` : ''}
+                                            ${continent.countries.length > 0 ? `${styles.toggle}` : ''}
                                             ${continent.code === activeContinent ? `${styles.opened}` : ''}`}
                                             title={continent.name}>
                                             {continent.name}
